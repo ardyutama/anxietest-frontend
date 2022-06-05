@@ -1,0 +1,26 @@
+{
+  "data": {
+    "AboutAnxiety": [
+      {
+        "title": "Gangguan Kecemasan Umum (GAD)",
+        "content": "Generalized Anxiety Disorder (GAD) adalah gangguan kecemasan yang ditandai dengan kecemasan kronis, kekhawatiran, dan ketegangan yang berlebihan, bahkan ketika hanya ada sedikit atau tidak ada yang memprovokasinya. Seseorang yang menderita gangguan ini bisa merasa cemas atau khawatir secara terus-menerus dan berlebihan terhadap berbagai hal, mulai dari pekerjaan, kesehatan, hingga hal-hal yang sederhana dan wajar terjadi sehari-hari, seperti berinteraksi dengan orang lain."
+      },
+      {
+        "title": "Gangguan Panik",
+        "content": "Gangguan panik adalah gangguan kecemasan yang ditandai dengan episode ketakutan intens yang tak terduga dan berulang tanpa adanya alasan yang jelas disertai dengan gejala fisik yang mungkin termasuk nyeri dada, jantung berdebar-debar, sesak napas, pusing, atau gangguan perut."
+      },
+      {
+        "title": "Gangguan Obsesif-Kompulsif (OCD)",
+        "content": "Obsessive-Compulsive Disorder (OCD) adalah gangguan kecemasan dan ditandai dengan pikiran yang tidak diinginkan (obsesi) dan perilaku berulang (kompulsi). Orang yang menderita gangguan OCD memiliki kecenderungan untuk melakukan sesuatu secara berulang-ulang untuk meringankan rasa cemas yang berasal dari pikirannya sendiri, contohnya, mencuci tangan harus sebanyak 3 kali karena berpikir tangannya masih kotor. Namun, melakukan rutinitas tersebut hanya memberikan kelegaan sementara, dan tidak melakukannya secara nyata meningkatkan kecemasan."
+      },
+      {
+        "title": "Fobia Sosial (atau Gangguan Kecemasan Sosial)",
+        "content": "Fobia Sosial, atau Gangguan Kecemasan Sosial, adalah gangguan kecemasan atau ketakutan yang luar biasa terhadap lingkungan sosial atau situasi ketika harus berinteraksi dengan orang lain. Penderita fobia ini selalu merasa diawasi dan dinilai oleh orang lain, serta takut atau merasa malu secara berlebihan saat berada di keramaian. Hal-hal tersebut membuat penderita selalu berusaha menghindari situasi yang mengharuskan ia bertemu atau berinteraksi dengan banyak orang."
+      },
+      {
+        "title": "Gangguan Stres Pascatrauma (PTSD)",
+        "content": "Post-Traumatic Stress Disorder (PTSD) adalah gangguan kecemasan yang muncul pada seseorang yang pernah mengalami kejadian traumatis atau berada di situasi berbahaya yang mengancam nyawa. Contohnya, tinggal di daerah konflik atau perang, terkena bencana alam, atau korban kekerasan. Orang yang menderita PTSD sering kali susah untuk melupakan pengalaman traumatisnya, baik terlintas dalam benak atau saat bermimpi, yang kemudian membuatnya merasa bersalah, terisolasi, dan sulit bersosialisasi dengan orang lain."
+      }
+    ]
+  }
+}
