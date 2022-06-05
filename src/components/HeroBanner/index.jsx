@@ -1,6 +1,7 @@
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import React from "react";
 import HeroImage from "../HeroImage";
+import Button from "../Button";
 
 const HeroBanner = () => {
   const Title = () => {
@@ -20,9 +21,13 @@ const HeroBanner = () => {
       </>
     );
   };
+
   return (
     <>
-      <Title />
+      <Flex flexDirection="column">
+        <Title />
+        <Button path="/"/>
+      </Flex>
       <Box pl={120}>
         <HeroImage />
       </Box>
