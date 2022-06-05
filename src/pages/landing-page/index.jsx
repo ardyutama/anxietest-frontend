@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import HeroBanner from "../../components/HeroBanner";
 import windowsSize from "../../hooks/useWindowSize";
-
+import AboutUs from "../../components/about-us";
 const LandingPage = () => {
   const windowSize = windowsSize();
 
@@ -11,7 +11,6 @@ const LandingPage = () => {
         <Box
           display="flex"
           h="100%"
-          flexDirection="row"
           alignItems="center"
           justifyContent="center"
         >
@@ -24,6 +23,7 @@ const LandingPage = () => {
   return (
     <>
       <Container component={<HeroBanner />}/>
+      <Container component={<AboutUs />}/>
     </>
   );
 };
