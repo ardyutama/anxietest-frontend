@@ -34,7 +34,7 @@ const CustomAccordion = () => {
     });
   };
   return (
-    <Accordion allowToggle as="div" display="flex" flexDirection="column" gap={2} w="100%" >
+    <Accordion allowToggle as="div" display="flex" flexDirection="column" gap={2} w="100%">
         <ShowAccordion />
     </Accordion>
   );
