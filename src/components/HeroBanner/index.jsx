@@ -26,7 +26,7 @@ const HeroBanner = () => {
     <Flex flexDirection="row" alignItems="center" my={4}>
       <Flex flexDirection="column">
         <Title />
-        <Button path="/"/>
+        <Button path="/" />
       </Flex>
       <Box pl={120}>
         <HeroImage />
