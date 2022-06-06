@@ -6,24 +6,37 @@ import {
   AccordionIcon,
   Box,
 } from "@chakra-ui/react";
+import Content from "../Content/about-anxiety.json";
 
-const CustomAccordion = ({ title, content }) => {
-  return (
-      <Accordion allowToggle>
-        <AccordionItem as="div" border="1px" color="#DADADA" rounded="8px" _expanded={{border:"0px"}} >
+const CustomAccordion = () => {
+  const ShowAccordion = () => {
+    const data = Content.data.AboutAnxiety;
+    return data.map((item, index) => {
+      return (
+        <AccordionItem
+          as="div"
+          border="1px"
+          color="#DADADA"
+          rounded="8px"
+          _expanded={{ border: "0px" }}
+        >
           <h2>
             <AccordionButton>
               <Box flex="1" textAlign="left" fontWeight="bold">
-                {title}
+                {item.title}
               </Box>
               <AccordionIcon />
             </AccordionButton>
           </h2>
-          <AccordionPanel pb={4}>
-            {content}
-          </AccordionPanel>
+          <AccordionPanel pb={4}>{item.content}</AccordionPanel>
         </AccordionItem>
-      </Accordion>
+      );
+    });
+  };
+  return (
+    <Accordion allowToggle as="div" display="flex" flexDirection="column" gap={2} w="100%" >
+        <ShowAccordion />
+    </Accordion>
   );
 };
 
