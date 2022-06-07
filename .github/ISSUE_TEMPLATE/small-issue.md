@@ -3,7 +3,7 @@ name: Small Issue
 about: " small task that is, most likely, part of an Epic. It will usually be labeled
   as `good first issue`."
 title: 'Task: Your title'
-labels: ''
+labels: good first issue
 assignees: ''
 
 ---
