@@ -1,3 +1,4 @@
+// import the necessary librarys
 import {
   Accordion,
   AccordionItem,
@@ -6,6 +7,7 @@ import {
   AccordionIcon,
   Box,
 } from "@chakra-ui/react";
+// import Content component
 import Content from "../Content/about-anxiety.json";
 
 const CustomAccordion = () => {
