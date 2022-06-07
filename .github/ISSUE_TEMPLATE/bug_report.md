@@ -1,7 +1,11 @@
---------
+---
 name: Bug report
 about: Create a report to help us improve
---------
+title: 'Hotfix: Your title'
+labels: bug
+assignees: ''
+
+---
 
 <!-- Please search existing issues to avoid creating duplicates. -->
 
