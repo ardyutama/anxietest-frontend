@@ -1,6 +1,8 @@
+// import the necessary librarys and components
 import { Box, Flex, Heading } from "@chakra-ui/react";
 import Accordion from "../Accordion";
 
+// create a function
 const AboutUs = () => {
   return (
     <Flex py={24}>
@@ -15,6 +17,7 @@ const AboutUs = () => {
         >
           Jenis Gangguan Kecemasan yang Umum Terjadi.
         </Heading>
+// render Accordion component here
         <Accordion />
       </Box>
     </Flex>
