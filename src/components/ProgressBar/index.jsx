@@ -1,7 +1,7 @@
 import { Box, Progress, Text } from "@chakra-ui/react";
 import React from "react";
 
-const ProgressBar = () => {
+const ProgressBar = ({value}) => {
   return (
     <div>
       <Box
@@ -12,9 +12,9 @@ const ProgressBar = () => {
         alignItems="center"
         justifyContent="center"
       >
-        <Text fontSize="md" me={2}>80%</Text>
+        <Text fontSize="md" me={2}>{value}%</Text>
         <Box w="600px">
-          <Progress colorScheme="gray" value={80} />
+          <Progress colorScheme="gray" value={value} />
         </Box>
       </Box>
     </div>
