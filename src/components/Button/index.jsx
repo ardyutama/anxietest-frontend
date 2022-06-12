@@ -1,7 +1,7 @@
 import { Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-const ButtonLink = ({path}) => {
+const ButtonLink = ({path, text,...props}) => {
   return (
     <div>
       <Button
@@ -11,14 +11,14 @@ const ButtonLink = ({path}) => {
         py={3}
         display="inline-flex"
         color="white"
-        mt={10}
         to={path}
         _hover={{
           bg: "main.surface",
           color: "main.primary",
         }}
+        {...props}
       >
-        Ambil tes
+        {text}
       </Button>
     </div>
   );
