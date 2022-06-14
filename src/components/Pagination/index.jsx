@@ -24,6 +24,7 @@ export const Pagination = ({ itemsPerPage, items }) => {
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
   const [score, setScore] = useState();
+  console.log(items);
   const handleChange = (e) => {
     setScore({
       ...score,
