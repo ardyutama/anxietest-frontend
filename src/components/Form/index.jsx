@@ -1,7 +1,7 @@
 import { Box, Heading, Radio, RadioGroup, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 
-const Form = () => {
+const Form = ({ question, name, handleChange }) => {
   return (
     <div>
       <Box
@@ -14,17 +14,16 @@ const Form = () => {
         mt={8}
       >
         <Heading as="h3" size="md" mb={4}>
-          Saya mengingat apapun yang membawa kembali perasaan tentang peristiwa
-          tersebut.
+          {question}
         </Heading>
-        <RadioGroup>
-          <Stack direction="row" spacing='24px'>
+        <RadioGroup id={name} defaultValue="0">
+          <Stack direction="row" spacing="24px">
             <Text>Tidak pernah</Text>
-            <Radio colorScheme="blackAlpha" size='lg' value="1"/>
-            <Radio colorScheme="blackAlpha" size='lg' value="2"/>
-            <Radio colorScheme="blackAlpha" size='lg' value="3"/>
-            <Radio colorScheme="blackAlpha" size='lg' value="4"/>
-            <Radio colorScheme="blackAlpha" size='lg' value="5"/>
+            <Radio name={name} onChange={handleChange} colorScheme="blackAlpha" size="lg" value="1" />
+            <Radio name={name} onChange={handleChange} colorScheme="blackAlpha" size="lg" value="2" />
+            <Radio name={name} onChange={handleChange} colorScheme="blackAlpha" size="lg" value="3" />
+            <Radio name={name} onChange={handleChange} colorScheme="blackAlpha" size="lg" value="4" />
+            <Radio name={name} onChange={handleChange} colorScheme="blackAlpha" size="lg" value="5" />
             <Text>Sangat Sering</Text>
           </Stack>
         </RadioGroup>

@@ -1,0 +1,17 @@
+.pagination {
+    display: flex;
+    margin-top: 56px;
+    margin-bottom: 96px;
+    list-style: none;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+}
+
+.next-link {
+    display: block;
+    background: #6257E2;
+    border-radius: 8px;
+    color: #fff;
+    padding: 12px 48px;
+}

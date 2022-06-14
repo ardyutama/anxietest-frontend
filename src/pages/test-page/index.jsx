@@ -1,14 +1,33 @@
-import { Box, Button, HStack } from "@chakra-ui/react";
-import React from "react";
-import Form from "../../components/Form";
+import { Box } from "@chakra-ui/react";
+import React, { useState, useRef } from "react";
 import ProgressBar from "../../components/ProgressBar";
 import TitleBar from "../../components/TitleBar";
+import quiz from "./question";
+import { Pagination } from "../../components/Pagination";
+import { useEffect } from "react";
+
+
 
 const TestPage = () => {
+  const [progress, setProgress] = useState(0);
+  const [question, setQuestion] = useState([])
+  const fetchQuestion = () => {
+    setQuestion([])
+    quiz.map((item) => {
+      item.questions.map((question) => {
+        var data = {title: item.title, questions: question}
+        setQuestion(prev => [...prev, data])
+      });
+    });
+  };
+  useEffect(() => {
+    fetchQuestion();
+  }, []);
+
   return (
     <div>
       <TitleBar />
-      <ProgressBar />
+      <ProgressBar value={progress} />
       <Box
         display="flex"
         justifyContent="center"
@@ -16,21 +35,8 @@ const TestPage = () => {
         flexDirection="column"
         mt={2}
       >
-        <Form />
-        <Form />
-        <Form />
-        <Form />
-        <Form />
-        <Form />
-        <Form />
-        <HStack spacing="24px">
-          <Button colorScheme="teal" size="md" width="200px" my={8}>
-            Sebelumnya
-          </Button>
-          <Button colorScheme="teal" size="md" width="200px" my={8}>
-            Berikutnya
-          </Button>
-        </HStack>
+        {/* <Pagination itemsPerPage={7} items={quiz[0].questions} /> */}
+        {question.length > 0 ? <Pagination itemsPerPage={7} items={question} /> : null}
       </Box>
     </div>
   );
