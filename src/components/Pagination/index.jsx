@@ -29,7 +29,6 @@ export const Pagination = ({ itemsPerPage }) => {
   const [itemOffset, setItemOffset] = useState(0);
   const [question, setQuestion] = useState([]);
 
-  //NOTE: Nyoba fetch dari dalem pagination tetep gabisa anjg
   const fetchQuestion = () => {
     setQuestion([]);
     Quiz.map((item) => {
@@ -63,13 +62,6 @@ export const Pagination = ({ itemsPerPage }) => {
     const id = e.target.id;
     const value = e.target.value;
     setValue(id, value);
-
-    //NOTE: Mengupdate value menggunakan setState
-    // setCurrentItems((prevState) =>
-    //   prevState.map((item) =>
-    //     item.id === id ? { ...item, value: value } : item
-    //   )
-    // );
   };
 
   useEffect(() => {

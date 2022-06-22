@@ -9,7 +9,6 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-//FIXME: bug nya disini, kalo next radio button value ada
 const Form = ({ question, name, handleChange, value, id }) => {
   return (
     <div>

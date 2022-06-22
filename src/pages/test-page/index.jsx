@@ -1,8 +1,8 @@
 import { Box } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProgressBar from "../../components/ProgressBar";
 import TitleBar from "../../components/TitleBar";
-import { Pagination } from "../../components/Pagination";
+import QuizContainer from "../../components/QuizContainer";
 
 const TestPage = () => {
   const [progress, setProgress] = useState(0);
@@ -18,7 +18,7 @@ const TestPage = () => {
         flexDirection="column"
         mt={2}
       >
-        <Pagination itemsPerPage={7} />
+        <QuizContainer />
       </Box>
     </div>
   );
