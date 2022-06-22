@@ -1,7 +1,8 @@
 import { Box, Progress, Text } from "@chakra-ui/react";
 import React from "react";
 
-const ResultBar = ( { score, value, children } ) => {
+const ResultBar = ({ score, value, children }) => {
+  console.log(score);
   return (
     <Box display="flex" flexDirection="column" alignItems="center">
       <Text fontSize="md" fontWeight="bold" color="black">

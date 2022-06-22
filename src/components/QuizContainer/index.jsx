@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Form from "../Form";
 import quiz from "../../question";
+import ButtonLink from "../Button";
 const QuizContainer = ({ questionData }) => {
   const [question, setQuestion] = useState([]);
 
@@ -23,33 +24,23 @@ const QuizContainer = ({ questionData }) => {
     fetchQuestion();
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem("question", JSON.stringify(question));
-  }, [question]);
+  // useEffect(() => {
+  //   localStorage.setItem("question", JSON.stringify(question));
+  // }, [question]);
 
-  // const setValue = (id, value) => {
-  //   question.map((item) => {
-  //     if (item.id === id) {
-  //       item.value = value;
-  //     }
-  //     return item;
-  //   });
-  // };
-  console.log(question);
   const handleChange = (e) => {
     const id = e.target.id;
     const value = e.target.value;
-    // setValue(id, value);
     setQuestion((prevState) =>
       prevState.map((item) =>
         item.id === id ? { ...item, value: value } : item
       )
     );
   };
-
+  console.log(question);
   return (
     <>
-      {question.map((item, index) => (
+      {question?.map((item, index) => (
         <Form
           key={index}
           question={item.questions}
@@ -59,6 +50,15 @@ const QuizContainer = ({ questionData }) => {
           id={item.id}
         />
       ))}
+      <ButtonLink
+        text="Submit Hasil"
+        path="/result"
+        mt={12}
+        mb={12}
+        onClick={() =>
+          localStorage.setItem("question", JSON.stringify(question))
+        }
+      />
     </>
   );
 };
