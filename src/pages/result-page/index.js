@@ -5,6 +5,14 @@ import ResultDetail from "../../components/ResultDetail";
 import quiz from "../../question";
 import Result from "../../components/Result";
 const ResultPage = () => {
+  const [res, setRes] = useState();
+  const maxValue = {
+    GAD: 28,
+    PAD: 40,
+    OCD: 72,
+    PTSD: 88,
+    SAD: 68,
+  }
   const result = {
     GAD: 0,
     PAD: 0,
@@ -12,9 +20,12 @@ const ResultPage = () => {
     PTSD: 0,
     SAD: 0,
   };
+  const resPercent = {}
   useEffect(() => {
     calc();
-  }, [result]);
+    calcPresentase();
+    setRes(resPercent)
+  }, []);
 
   const calc = async () => {
     const items = JSON.parse(localStorage.getItem("question"));
@@ -26,15 +37,19 @@ const ResultPage = () => {
           .reduce((prev, curr) => prev + curr, 0);
         // .reduce((prev, curr) => prev + curr, 0)
       }
-      console.log(result);
+      // console.log(result);
       // return resultSum;
       // calcPresentase();
     }
   };
   const calcPresentase = () => {
-    quiz.map((item) =>
-      Math.round((result[item.title] / item.questions.length) * 100)
-    );
+    for (const key in result) {
+      resPercent[key] = result[key] / maxValue[key] * 100;
+    }
+    console.log(resPercent);
+    // quiz.map((item) =>
+    //   Math.round((result[item.title] / item.questions.length * 4) * 100)
+    // );
   };
   return (
     <>
@@ -54,7 +69,9 @@ const ResultPage = () => {
           border="1px solid #ccc"
           mt="20px"
         >
-          <Result data={result} />
+          {res &&
+            <Result data={res} />
+          }
         </Box>
       </Box>
       <Box
@@ -88,10 +105,11 @@ const ResultPage = () => {
         <Text>Lihat Penjelasan Hasil</Text>
       </Box>
       <Box display="flex" flexDirection="column" alignItems="center" mt="50px">
-        <ResultDetail />
-        <ResultDetail />
-        <ResultDetail />
-        <ResultDetail />
+        <ResultDetail title={"General Anxiety Disorder"} data={res.GAD} />
+        <ResultDetail title={"Obsessive Compulsive Disorder"} data={res.OCD} />
+        <ResultDetail title={"Panic Disorder"} data={res.PAD} />
+        <ResultDetail title={"Post Traumatic Stress Disorder"} data={res.PTSD} />
+        <ResultDetail title={"Social Anxiety Disorder"} data={res.SAD} />
       </Box>
     </>
   );

@@ -1,7 +1,7 @@
 import { Box, Text } from "@chakra-ui/react";
 import React from "react";
 
-const ResultDetail = () => {
+const ResultDetail = ({ title, data }) => {
   return (
     <Box
       display="flex"
@@ -15,7 +15,7 @@ const ResultDetail = () => {
     >
       <Box width="60%" flexDirection="column" display="flex">
         <Text mb="15px" fontSize="md" fontWeight="semibold" color="black">
-          Post Traumatic Disorder
+          {title}
         </Text>
         <Text>
           Pada tes Post Traumatic Disorder, Anda mendapatkan nilai 21 dari 28,
@@ -23,7 +23,12 @@ const ResultDetail = () => {
           pertolongan profesional.
         </Text>
       </Box>
-      <Box width="40%" display="flex" justifyContent="flex-end" alignItems="center">
+      <Box
+        width="40%"
+        display="flex"
+        justifyContent="flex-end"
+        alignItems="center"
+      >
         <Text fontWeight="bold">Sangat Parah</Text>
         <Box
           border="1px solid #ccc"
@@ -36,8 +41,13 @@ const ResultDetail = () => {
           alignItems="center"
           bg="#E0E0E0"
         >
-          <Text fontWeight="bold" fontSize="md" color="black" textAlign="center">
-            100%
+          <Text
+            fontWeight="bold"
+            fontSize="md"
+            color="black"
+            textAlign="center"
+          >
+            {data}%
           </Text>
         </Box>
       </Box>
