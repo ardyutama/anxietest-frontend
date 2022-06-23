@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import LandingPage from "../pages/landing-page";
 import ResultPage from "../pages/result-page";
 import TestPage from "../pages/test-page";
-
 function Router() {
   return (
     <Routes>

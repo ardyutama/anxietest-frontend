@@ -1,7 +1,15 @@
-import { Box, Heading, Radio, RadioGroup, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  Stack,
+  Text,
+  Radio,
+  RadioGroup,
+} from "@chakra-ui/react";
 import React from "react";
 
-const Form = ({ question, name, handleChange }) => {
+const Form = ({ question, name, handleChange, value, id }) => {
   return (
     <div>
       <Box
@@ -16,17 +24,19 @@ const Form = ({ question, name, handleChange }) => {
         <Heading as="h3" size="md" mb={4}>
           {question}
         </Heading>
-        <RadioGroup id={name} defaultValue="0">
-          <Stack direction="row" spacing="24px">
-            <Text>Tidak pernah</Text>
-            <Radio name={name} onChange={handleChange} colorScheme="blackAlpha" size="lg" value="1" />
-            <Radio name={name} onChange={handleChange} colorScheme="blackAlpha" size="lg" value="2" />
-            <Radio name={name} onChange={handleChange} colorScheme="blackAlpha" size="lg" value="3" />
-            <Radio name={name} onChange={handleChange} colorScheme="blackAlpha" size="lg" value="4" />
-            <Radio name={name} onChange={handleChange} colorScheme="blackAlpha" size="lg" value="5" />
-            <Text>Sangat Sering</Text>
-          </Stack>
-        </RadioGroup>
+        <Flex flexDir="row" gap={4} alignItems="center">
+          <Text>Tidak pernah</Text>
+          <RadioGroup name={name} size="lg" colorScheme="blackAlpha">
+            <Stack direction="row" spacing="24px">
+              <Radio id={id} onChange={handleChange} value="0" name={id} />
+              <Radio id={id} onChange={handleChange} value="1" name={id} />
+              <Radio id={id} onChange={handleChange} value="2" name={id} />
+              <Radio id={id} onChange={handleChange} value="3" name={id} />
+              <Radio id={id} onChange={handleChange} value="4" name={id} />
+            </Stack>
+          </RadioGroup>
+          <Text>Sangat Sering</Text>
+        </Flex>
       </Box>
     </div>
   );

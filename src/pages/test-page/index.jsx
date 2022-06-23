@@ -1,33 +1,13 @@
 import { Box } from "@chakra-ui/react";
-import React, { useState, useRef } from "react";
-import ProgressBar from "../../components/ProgressBar";
-import TitleBar from "../../components/TitleBar";
-import quiz from "./question";
-import { Pagination } from "../../components/Pagination";
-import { useEffect } from "react";
+import React, { useState } from "react";
+import Headers from "../../components/Headers";
 
-
+import QuizContainer from "../../components/QuizContainer";
 
 const TestPage = () => {
-  const [progress, setProgress] = useState(0);
-  const [question, setQuestion] = useState([])
-  const fetchQuestion = () => {
-    setQuestion([])
-    quiz.map((item) => {
-      item.questions.map((question) => {
-        var data = {title: item.title, questions: question}
-        setQuestion(prev => [...prev, data])
-      });
-    });
-  };
-  useEffect(() => {
-    fetchQuestion();
-  }, []);
-
   return (
-    <div>
-      <TitleBar />
-      <ProgressBar value={progress} />
+    <Box display="flex" flexDirection="column">
+      <Headers />
       <Box
         display="flex"
         justifyContent="center"
@@ -35,10 +15,9 @@ const TestPage = () => {
         flexDirection="column"
         mt={2}
       >
-        {/* <Pagination itemsPerPage={7} items={quiz[0].questions} /> */}
-        {question.length > 0 ? <Pagination itemsPerPage={7} items={question} /> : null}
+        <QuizContainer />
       </Box>
-    </div>
+    </Box>
   );
 };
 
