@@ -1,21 +1,37 @@
 import ResultBar from "../ResultBar";
 
-const Result = ({ data }) => {
+const Result = ({ data, score }) => {
   return (
     <>
-      <ResultBar score={data.GAD} value="Sangat Berat">
+      <ResultBar
+        data={data.GAD}
+        score={score.GAD}
+        title={"General Anxiety Disorder"}
+      >
         Generalized Anxiety Disorder
       </ResultBar>
-      <ResultBar score={data.OCD} value="Sangat Berat">
+      <ResultBar
+        data={data.OCD}
+        score={score.OCD}
+        title={"Obsessive Compulsive Disorder"}
+      >
         Obsessive Compulsive Disorder
       </ResultBar>
-      <ResultBar score={data.PAD} value="Sangat Berat">
+      <ResultBar data={data.PAD} score={score.PAD} title={"Panic Disorder"}>
         Panic Disorder
       </ResultBar>
-      <ResultBar score={data.PTSD} value="Sangat Berat">
+      <ResultBar
+        data={data.PTSD}
+        score={score.PTSD}
+        title={"Post Traumatic Stress Disorder"}
+      >
         Post Traumatic Stress Disorder
       </ResultBar>
-      <ResultBar score={data.SAD} value="Sangat Berat">
+      <ResultBar
+        data={data.SAD}
+        score={score.SAD}
+        title={"Social Anxiety Disorder"}
+      >
         Social Anxiety Disorder
       </ResultBar>
     </>

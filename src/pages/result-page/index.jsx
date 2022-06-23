@@ -1,18 +1,18 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Button, Heading, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import ResultBar from "../../components/ResultBar";
 import ResultDetail from "../../components/ResultDetail";
-import quiz from "../../question";
 import Result from "../../components/Result";
+import ButtonLink from "../../components/Button";
 const ResultPage = () => {
   const [res, setRes] = useState();
+  const [score, setScore] = useState();
   const maxValue = {
     GAD: 28,
     PAD: 40,
     OCD: 72,
     PTSD: 88,
     SAD: 68,
-  }
+  };
   const result = {
     GAD: 0,
     PAD: 0,
@@ -20,11 +20,12 @@ const ResultPage = () => {
     PTSD: 0,
     SAD: 0,
   };
-  const resPercent = {}
+  const resPercent = {};
   useEffect(() => {
     calc();
+    setScore(result);
     calcPresentase();
-    setRes(resPercent)
+    setRes(resPercent);
   }, []);
 
   const calc = async () => {
@@ -35,21 +36,13 @@ const ResultPage = () => {
           .filter((item) => item.title === key)
           .map((item) => parseInt(item.value))
           .reduce((prev, curr) => prev + curr, 0);
-        // .reduce((prev, curr) => prev + curr, 0)
       }
-      // console.log(result);
-      // return resultSum;
-      // calcPresentase();
     }
   };
   const calcPresentase = () => {
     for (const key in result) {
-      resPercent[key] = result[key] / maxValue[key] * 100;
+      resPercent[key] = Math.round((result[key] / maxValue[key]) * 100);
     }
-    console.log(resPercent);
-    // quiz.map((item) =>
-    //   Math.round((result[item.title] / item.questions.length * 4) * 100)
-    // );
   };
   return (
     <>
@@ -69,10 +62,14 @@ const ResultPage = () => {
           border="1px solid #ccc"
           mt="20px"
         >
-          {res &&
-            <Result data={res} />
-          }
+          {res && <Result data={res} score={score} />}
         </Box>
+        <ButtonLink
+          mt={10}
+          to="/test"
+          text="Ambil Test Lagi"
+          onClick={() => localStorage.clear("question")}
+        />
       </Box>
       <Box
         display="flex"
@@ -105,11 +102,35 @@ const ResultPage = () => {
         <Text>Lihat Penjelasan Hasil</Text>
       </Box>
       <Box display="flex" flexDirection="column" alignItems="center" mt="50px">
-        <ResultDetail title={"General Anxiety Disorder"} data={res.GAD} />
-        <ResultDetail title={"Obsessive Compulsive Disorder"} data={res.OCD} />
-        <ResultDetail title={"Panic Disorder"} data={res.PAD} />
-        <ResultDetail title={"Post Traumatic Stress Disorder"} data={res.PTSD} />
-        <ResultDetail title={"Social Anxiety Disorder"} data={res.SAD} />
+        {res && (
+          <>
+            <ResultDetail
+              title={"General Anxiety Disorder"}
+              data={res.GAD}
+              score={score.GAD}
+            />
+            <ResultDetail
+              title={"Obsessive Compulsive Disorder"}
+              data={res.OCD}
+              score={score.OCD}
+            />
+            <ResultDetail
+              title={"Panic Disorder"}
+              data={res.PAD}
+              score={score.PAD}
+            />
+            <ResultDetail
+              title={"Post Traumatic Stress Disorder"}
+              data={res.PTSD}
+              score={score.PTSD}
+            />
+            <ResultDetail
+              title={"Social Anxiety Disorder"}
+              data={res.SAD}
+              score={score.SAD}
+            />
+          </>
+        )}
       </Box>
     </>
   );

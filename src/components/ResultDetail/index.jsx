@@ -1,7 +1,36 @@
 import { Box, Text } from "@chakra-ui/react";
 import React from "react";
 
-const ResultDetail = ({ title, data }) => {
+const ResultDetail = ({ title, data, score }) => {
+  const measure = () => {
+    if (title === "General Anxiety Disorder") {
+      if (score <= 7) return "Ringan";
+      else if (score <= 14 && score > 7) return "Sedang";
+      else if (score <= 21 && score > 14) return "Sedang Berat";
+      else if (score <= 28 && score > 21) return "Berat";
+    } else if (title === "Panic Disorder") {
+      if (score <= 4) return "tidak ada gangguan";
+      else if (score <= 14 && score > 5) return "Ringan";
+      else if (score <= 24 && score > 15) return "Sedang";
+      else if (score <= 34 && score > 25) return "Berat";
+      else if (score <= 40 && score > 35) return "Ekstrim";
+    } else if (title === "Obsessive Compulsive Disorder") {
+      if (score <= 21) return "Ringan";
+      else if (score <= 40 && score > 22) return "Sedang";
+      else if (score <= 72 && score > 41) return "Berat";
+    } else if (title === "Post Traumatic Stress Disorder") {
+      if (score <= 10) return "tidak ada gangguan";
+      else if (score <= 30 && score > 11) return "Ringan";
+      else if (score <= 50 && score > 31) return "Sedang";
+      else if (score <= 88 && score > 51) return "Berat";
+    } else if (title === "Social Anxiety Disorder") {
+      if (score <= 20) return "tidak ada gangguan";
+      else if (score <= 30 && score > 21) return "Ringan";
+      else if (score <= 40 && score > 31) return "Sedang";
+      else if (score <= 50 && score > 41) return "Berat";
+      else if (score <= 68 && score > 51) return "Ekstrim";
+    }
+  };
   return (
     <Box
       display="flex"
@@ -29,7 +58,7 @@ const ResultDetail = ({ title, data }) => {
         justifyContent="flex-end"
         alignItems="center"
       >
-        <Text fontWeight="bold">Sangat Parah</Text>
+        <Text fontWeight="bold">{measure(score)}</Text>
         <Box
           border="1px solid #ccc"
           borderRadius="100px"
